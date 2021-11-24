@@ -1,3 +1,3 @@
 # Algorithms
 
-Hola, en este repositorio vas a encontrar ejercicio de algoritmia.
+Hola, en este repositorio vas a encontrar ejercicios de algoritmia.
