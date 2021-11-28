@@ -1,5 +1,7 @@
 #include <iostream>
-#include <cstring>
+#include <string>
+
+/* Author: José Rodolfo (jric2002) */
 
 using namespace std;
 
@@ -8,17 +10,15 @@ int main() {
   unsigned short int num_char;
   cin >> n;
   if (n >= 1 && n <= 100) {
-    string words[n];
+    string word;
     for (unsigned short int i = 0; i < n; i++) {
-      cin >> words[i];
-    }
-    for (unsigned short int i = 0; i < n; i++) {
-      num_char = words[i].size();
+      cin >> word;
+      num_char = word.size();
       if (num_char > 10) {
-        cout << words[i].at(0) << (num_char - 2) << words[i].at(num_char - 1) << endl;
+        cout << word.at(0) << (num_char - 2) << word.at(num_char - 1) << endl;
       }
       else {
-        cout << words[i] << endl;
+        cout << word << endl;
       }
     }
   }
