@@ -9,7 +9,7 @@ Hola, en este repositorio vas a encontrar ejercicios de algoritmia.
 | :--- | :--- |
 | Codeforces | https://codeforces.com/ |
 
-**Codeforces**: En la carpeta **codeforces** se encuentran varios ejercicios que estan ordenados de forma ascendente en donde la dificultad va subiendo.
+**Codeforces**: En la carpeta **codeforces** se encuentran varios ejercicios que estan ordenados de forma ascendente en donde la dificultad va subiendo, puedes visitar el siguiente link para ver los ejercicios ordenados de la misma manera <https://codeforces.com/problemset?order=BY_RATING_ASC>
 
 **Others**: En la carpeta **others** se encuentran ejercicios que estan desordenados.
 
