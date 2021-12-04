@@ -1,5 +1,5 @@
 # Day 1: Sonar Sweep
-## Part one
+## First part
 You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!
 
 Before you know it, you're inside a submarine the Elves keep ready for situations like this. It's covered in Christmas lights (because of course it is), and it even has an experimental antenna that should be able to track the keys if you can boost its signal strength high enough; there's a little meter that indicates the antenna's signal strength by displaying 0-50 **stars**.
@@ -68,7 +68,10 @@ int main() {
 }
 ```
 
-## Part two
+The answer is: `1655`
+![Sonar sweep - Answer of the first part](./sonar-sweep-answer-of-the-first-part.png)
+
+## Second part
 Considering every single measurement isn't as useful as you expected: there's just too much noise in the data.
 
 Instead, consider sums of a **three-measurement sliding window**. Again considering the above example:
