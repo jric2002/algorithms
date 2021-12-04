@@ -68,7 +68,7 @@ int main() {
 }
 ```
 
-The answer is: `1655`
+The answer is: `1655`  
 ![Sonar sweep - Answer of the first part](./sonar-sweep-answer-of-the-first-part.png)
 
 ## Second part
