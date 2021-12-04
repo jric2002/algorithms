@@ -1,4 +1,5 @@
 # Day 1: Sonar Sweep
+![Day 1 completed](./day-1-completed.png)
 ## First part
 You're minding your own business on a ship at sea when the overboard alarm goes off! You rush to see if you can help. Apparently, one of the Elves tripped and accidentally sent the sleigh keys flying into the ocean!
 
@@ -51,19 +52,30 @@ To begin, [get your puzzle input](./input.txt).
 **Solution:**
 ```cpp
 #include <iostream>
+#include <fstream>
+#include <cstring>
 /* Author: José Rodolfo (jric2002) */
 using namespace std;
 int main() {
   unsigned short int depth, depth_previous;
   unsigned int increases = 0;
-  cin >> depth_previous;
-  while (cin >> depth) {
-    if (depth > depth_previous) {
-      increases++;
+  string file_name = "input.txt";
+  ifstream file(file_name.c_str());
+  if (file.is_open()) {
+    file >> depth_previous;
+    while (!file.eof()) {
+      file >> depth;
+      if (depth > depth_previous) {
+        increases++;
+      }
+      depth_previous = depth;
     }
-    depth_previous = depth;
+    cout << increases << endl;
+    file.close();
   }
-  cout << increases << endl;
+  else {
+    cout << "Cannot open " << file_name << " file" << endl;
+  }
   return 0;
 }
 ```
@@ -112,5 +124,40 @@ Although it hasn't changed, you can still [get your puzzle input](./input.txt).
 
 **Solution:**
 ```cpp
-
+#include <iostream>
+#include <fstream>
+#include <cstring>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int depth_one, depth_two, depth_three;
+  unsigned short int first_sum, second_sum, increases = 0;
+  const string file_name = "input.txt";
+  ifstream file(file_name.c_str());
+  if (file.is_open()) {
+    file >> depth_one;
+    file >> depth_two;
+    file >> depth_three;
+    first_sum = depth_one + depth_two + depth_three;
+    while (!file.eof()) {
+      depth_one = depth_two;
+      depth_two = depth_three;
+      file >> depth_three;
+      second_sum = depth_one + depth_two + depth_three;
+      if (second_sum > first_sum) {
+        increases++;
+      }
+      first_sum = second_sum;
+    }
+    cout << increases << endl;
+    file.close();
+  }
+  else {
+    cout << "Cannot open " << file_name << " file" << endl;
+  }
+  return 0;
+}
 ```
+
+The answer is: `1683`  
+![Sonar sweep - Answer of the second part](./sonar-sweep-answer-of-the-second-part.png)
