@@ -1,8 +1,9 @@
-# 4A Watermelon
-**time limit per test**: 1 second  
-**memory limit per test**: 64 megabytes  
-**input**: standard input  
-**output**: standard output  
+# Watermelon
+**Problem code**: 4A  
+**Time limit per test**: 1 second  
+**Memory limit per test**: 64 megabytes  
+**Input**: standard input  
+**Output**: standard output  
 
 One hot summer day Pete and his friend Billy decided to buy a watermelon. They chose the biggest and the ripest one, in their opinion. After that the watermelon was weighed, and the scales showed w kilos. They rushed home, dying of thirst, and decided to divide the berry, however they faced a hard problem.
 
