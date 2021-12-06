@@ -1,7 +1,5 @@
 # Author: José Rodolfo (jric2002)
-
 import math
-
 input_data = input().split(" ")
 input_data = [int(e) for e in input_data]
 m, n = input_data

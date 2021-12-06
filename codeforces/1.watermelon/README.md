@@ -26,3 +26,35 @@ Print `YES`, if the boys can divide the watermelon into two parts, each of them 
 
 ## Note
 For example, the boys can divide the watermelon into two parts of 2 and 6 kilos respectively (another variant — two parts of 4 and 4 kilos).
+
+## Solution
+The solution in **C++**:
+```cpp
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int w;
+  cin >> w;
+  if (w >= 1 && w <= 100) {
+    if ((w == 2) || ((w % 2) != 0)) {
+      cout << "NO" << endl;
+    }
+    else {
+      cout << "YES" << endl;
+    }
+  }
+  return 0;
+}
+```
+
+The solution in **Python 3**:
+```python
+# Author: José Rodolfo (jric2002)
+w = int(input())
+if (w >= 1 and w <= 100):
+  if ((w == 2) or ((w % 2) != 0)):
+    print("NO")
+  else:
+    print("YES")
+```

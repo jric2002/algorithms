@@ -1,10 +1,7 @@
 #include <iostream>
 #include <cstring>
-
 /* Author: José Rodolfo (jric2002) */
-
 using namespace std;
-
 int main() {
   unsigned short int n;
   cin >> n;

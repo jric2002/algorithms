@@ -1,5 +1,4 @@
 # Author: José Rodolfo (jric2002)
-
 n = int(input())
 if (n >= 1 and n <= 1000):
   petya = vasya = tonya = 0

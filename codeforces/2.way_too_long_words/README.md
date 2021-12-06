@@ -36,3 +36,45 @@ Print `n` lines. The i-th line should contain the result of replacing of the i-t
 | l10n |
 | i18n |
 | p43s |
+
+## Solution
+The solution in **C++**:
+```cpp
+#include <iostream>
+#include <string>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int n;
+  unsigned short int num_char;
+  cin >> n;
+  if (n >= 1 && n <= 100) {
+    string word;
+    for (unsigned short int i = 0; i < n; i++) {
+      cin >> word;
+      num_char = word.size();
+      if (num_char > 10) {
+        cout << word.at(0) << (num_char - 2) << word.at(num_char - 1) << endl;
+      }
+      else {
+        cout << word << endl;
+      }
+    }
+  }
+  return 0;
+}
+```
+
+The solution in **Python 3**:
+```python
+# Author: José Rodolfo (jric2002)
+n = int(input())
+if (n >= 1 and n <= 100):
+  for i in range(0, n):
+    word = str(input())
+    num_char = len(word)
+    if (num_char > 10):
+      print(word[0], (num_char - 2), word[-1], sep='')
+    else:
+      print(word)
+```

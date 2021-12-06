@@ -1,10 +1,7 @@
 #include <iostream>
 #include <string>
-
 /* Author: José Rodolfo (jric2002) */
-
 using namespace std;
-
 int main() {
   unsigned short int n;
   unsigned short int num_char;

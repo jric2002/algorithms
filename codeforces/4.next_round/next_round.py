@@ -1,5 +1,4 @@
 # Author: José Rodolfo (jric2002)
-
 input_data = (input()).split(" ")
 input_data = [int(e) for e in input_data]
 n, k = input_data
