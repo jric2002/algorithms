@@ -2,10 +2,8 @@
 n = int(input())
 stones_taken = 0
 if (n != 1):
-  previous_stone = str(input())
-  for i in range(0, (n - 1)):
-    current_stone = str(input())
-    if (current_stone == previous_stone):
+  row_of_stones = str(input())
+  for position in range(0, (len(row_of_stones) - 1)):
+    if (row_of_stones[position] == row_of_stones[position + 1]):
       stones_taken += 1
-    previous_stone = current_stone
 print(stones_taken)
