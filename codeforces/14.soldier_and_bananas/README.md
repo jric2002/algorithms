@@ -27,10 +27,28 @@ Output one integer — the amount of dollars that the soldier must borrow from h
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned int k, n, w;
+  signed int borrowed_money = 0;
+  cin >> k >> n >> w;
+  borrowed_money = (k * ((w * (w + 1)) / 2)) - n;
+  borrowed_money = (borrowed_money > 0) ? borrowed_money : 0;
+  cout << borrowed_money << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+input_data = input().split(" ")
+k = int(input_data[0])
+n = int(input_data[1])
+w = int(input_data[2])
+borrowed_money = int((k * ((w * (w + 1)) / 2)) - n)
+borrowed_money = borrowed_money if (borrowed_money > 0) else 0
+print(borrowed_money)
 ```
