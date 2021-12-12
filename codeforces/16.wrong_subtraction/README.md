@@ -44,10 +44,37 @@ The first example corresponds to the following sequence: `512 → 511 → 510 �
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned int n;
+  unsigned short int k;
+  cin >> n >> k;
+  while (k--) {
+    if ((n % 10) == 0) {
+      n = n / 10;
+    }
+    else {
+      n--;
+    }
+  }
+  cout << n << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+input_data = input().split(" ")
+n = int(input_data[0])
+k = int(input_data[1])
+while (k):
+  if ((n % 10) == 0):
+    n = int(n / 10)
+  else:
+    n -= 1
+  k -= 1
+print(n)
 ```
