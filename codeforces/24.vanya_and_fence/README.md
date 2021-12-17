@@ -55,10 +55,39 @@ In the third sample, all the persons have to bend, except the last one. The requ
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int n, h, a, min_width = 0;
+  cin >> n >> h;
+  while (n--) {
+    cin >> a;
+    if (a >= 1 && a <= (2 * h)) {
+      if (a <= h) {
+        min_width++;
+      }
+      else {
+        min_width += 2;
+      }
+    }
+  }
+  cout << min_width << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n, h = list(map(int, input().split(" ")))
+min_width = 0
+a = [int(height) for height in input().split(" ")]
+for i in range(0, n):
+  if (a[i] >= 1 and a[i] <= (2 * h)):
+    if (a[i] <= h):
+      min_width += 1
+    else:
+      min_width += 2
+print(min_width)
 ```
