@@ -48,10 +48,34 @@ Print `n` space-separated integers: the i-th number should equal the number of t
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int n, p;
+  cin >> n;
+  unsigned short int friends[n];
+  for (unsigned short int i = 0; i < n; i++) {
+    cin >> p;
+    friends[p - 1] = (i + 1);
+  }
+  for (unsigned short i = 0; i < n; i++) {
+    cout << friends[i] << " ";
+  }
+  cout << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n = int(input())
+positions = list(map(int, input().split(" ")))
+friends = [int(position) for position in positions]
+for i in range(0, n):
+  p = positions[i]
+  friends[p - 1] = (i + 1)
+for i in range(0, n):
+  print(friends[i], end=" ")
 ```
