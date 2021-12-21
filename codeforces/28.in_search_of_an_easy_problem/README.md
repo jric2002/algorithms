@@ -46,10 +46,38 @@ In the second example the problem easy for the only person, so it doesn't have t
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo */
+using namespace std;
+int main() {
+  unsigned short int n;
+  char opinion;
+  bool is_easy = true;
+  cin >> n;
+  while (n--) {
+    cin >> opinion;
+    if (opinion == '1') {
+      is_easy = false;
+    }
+  }
+  if (is_easy) {
+    cout << "EASY" << endl;
+  }
+  else {
+    cout << "HARD" << endl;
+  }
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n = int(input())
+is_easy = True
+opinions = input().split(" ")
+for position in range(0, n):
+  if (opinions[position] == '1'):
+    is_easy = False
+print("EASY") if (is_easy) else print("HARD")
 ```
