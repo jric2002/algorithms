@@ -42,10 +42,37 @@ Print `f(n)` in a single line.
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  signed long long int n;
+  cin >> n;
+  if (n != 0) {
+    if ((n % 2) != 0) {
+      n += 1;
+      n = -1 * n;
+    }
+    n /= 2;
+  }
+  else {
+    n++;
+  }
+  cout << n << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n = int(input())
+if (n != 0):
+  if ((n % 2) != 0):
+    n += 1
+    n = -1 * n
+  n = int(n / 2)
+else:
+  n += 1
+print(n)
 ```
