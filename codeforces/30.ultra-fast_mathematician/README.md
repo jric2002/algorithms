@@ -61,10 +61,40 @@ Write one line — the corresponding answer. Do not omit the leading `0s`.
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+#include <cstring>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int number_size;
+  string n1, n2, result = "";
+  cin >> n1;
+  cin >> n2;
+  number_size = n1.size();
+  for (unsigned short int position = 0; position < number_size; position++) {
+    if (n1[position] != n2[position]) {
+      result += '1';
+    }
+    else {
+      result += '0';
+    }
+  }
+  cout << result << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n1 = str(input())
+n2 = str(input())
+result = ""
+number_size = len(n1)
+for position in range(0, number_size):
+  if (n1[position] != n2[position]):
+    result += '1'
+  else:
+    result += '0'
+print(result)
 ```
