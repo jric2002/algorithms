@@ -37,10 +37,46 @@ Print a single integer — the minimum number of horseshoes Valera needs to buy.
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+#include <cstring>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int number_horseshoes = 4;
+  unsigned long int s[number_horseshoes];
+  unsigned short int min_horseshoes = 0;
+  bool status[number_horseshoes];
+  for (unsigned short int i = 0; i < number_horseshoes; i++) {
+    status[i] = true;
+    cin >> s[i];
+  }
+  for (unsigned short int i = 0; i < number_horseshoes; i++) {
+    if (status[i]) {
+      for (unsigned short int j = (i + 1); j < number_horseshoes; j++) {
+        if (s[i] == s[j]) {
+          status[j] = false;
+          min_horseshoes++;
+        }
+      }
+    }
+  }
+  cout << min_horseshoes << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+s = list(map(int, input().split(" ")))
+number_horseshoes = len(s)
+min_horseshoes = 0
+status = [True for i in range(0, number_horseshoes)]
+for i in range(0, number_horseshoes):
+  if (status[i]):
+    for j in range((i + 1), number_horseshoes):
+      if (s[i] == s[j]):
+        status[j] = False
+        min_horseshoes += 1
+print(min_horseshoes)
 ```
