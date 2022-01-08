@@ -50,10 +50,39 @@ In the second case dragons 1, 7, 11, 13, 17, 19 and 23 escaped unharmed.
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int k, l, m, n;
+  int d, damaged_dragons;
+  cin >> k;
+  cin >> l;
+  cin >> m;
+  cin >> n;
+  cin >> d;
+  damaged_dragons = d;
+  for (int i = 1; i <= d; i++) {
+    if ((i % k) && (i % l) && (i % m) && (i % n)) {
+      damaged_dragons -= 1;
+    }
+  }
+  cout << damaged_dragons << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+k = int(input())
+l = int(input())
+m = int(input())
+n = int(input())
+d = int(input())
+damaged_dragons = d
+for i in range(1, (d + 1)):
+  if ((i % k) and (i % l) and (i % m) and (i % n)):
+    damaged_dragons -= 1
+print(damaged_dragons)
 ```
