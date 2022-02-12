@@ -4,21 +4,44 @@ template <typename T>
 class Node {
   private:
     T value;
-    Node *next;
+    Node *left_child;
+    Node *right_child;
   public:
     Node(T value) {
       this->value = value;
-      next = NULL;
-    }
-    Node *getNext() {
-      return next;
+      left_child = NULL;
+      right_child = NULL;
     }
     T getValue() {
       return value;
     }
-    bool pointTo(Node *n) {
+    Node<T> *getLeftChild() {
+      return left_child;
+    }
+    Node<T> *getRightChild() {
+      return right_child;
+    }
+    bool setValue(T value) {
       try {
-        next = n;
+        this->value = value;
+        return false;
+      }
+      catch (...) {
+        return false;
+      }
+    }
+    bool setLeftChild(Node *lc) {
+      try {
+        left_child = lc;
+        return true;
+      }
+      catch (...) {
+        return false;
+      }
+    }
+    bool setRightChild(Node *rc) {
+      try {
+        right_child = rc;
         return true;
       }
       catch (...) {
