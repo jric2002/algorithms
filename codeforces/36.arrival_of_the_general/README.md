@@ -58,10 +58,74 @@ In the second sample the colonel may swap the soldiers in the following sequence
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int n, a, total_seconds;
+  unsigned short int greater_height, lower_height;
+  unsigned last_position, pos_highest_height, pos_lowest_height;
+  cin >> n;
+  unsigned short int height_soldiers[n];
+  last_position = n - 1;
+  for (unsigned short int i = 0; i < n; i++) {
+    cin >> a;
+    height_soldiers[i] = a;
+    if (i == 0) {
+      greater_height = a;
+      pos_highest_height = i;
+      lower_height = a;
+      pos_lowest_height = i;
+    }
+    else {
+      if (greater_height < a) {
+        greater_height = a;
+        pos_highest_height = i;
+      }
+      if (lower_height >= a) {
+        lower_height = a;
+        pos_lowest_height = i;
+      }
+    }
+  }
+  if (pos_lowest_height > pos_highest_height) {
+    total_seconds = pos_highest_height + (last_position - pos_lowest_height);
+  }
+  else {
+    total_seconds = pos_highest_height + (last_position - pos_lowest_height) - 1;
+  }
+  cout << total_seconds << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n = int(input())
+total_seconds = 0
+height_soldiers = list(map(int, input().split(" ")))
+last_position = n - 1
+greater_height = 0
+lower_height = 0
+pos_highest_height = 0
+pos_lowest_height = 0
+for i in range(0, n):
+  if (i == 0):
+    greater_height = height_soldiers[i]
+    pos_highest_height = i
+    lower_height = height_soldiers[i]
+    pos_lowest_height = i
+  else:
+    if (greater_height < height_soldiers[i]):
+      greater_height = height_soldiers[i]
+      pos_highest_height = i
+    if (lower_height >= height_soldiers[i]):
+      lower_height = height_soldiers[i]
+      pos_lowest_height = i
+if (pos_lowest_height > pos_highest_height):
+  total_seconds = pos_highest_height + (last_position - pos_lowest_height)
+else:
+  total_seconds = pos_highest_height + (last_position - pos_lowest_height) - 1
+print(total_seconds)
 ```
