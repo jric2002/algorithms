@@ -34,7 +34,7 @@ Print a single number — the number of distinct letters in Anton's set.
 
 | input |
 | :--- |
-| {}} |
+| {} |
 
 | output |
 | :--- |

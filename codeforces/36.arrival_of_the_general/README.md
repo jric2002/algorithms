@@ -38,7 +38,7 @@ Print the only integer — the minimum number of seconds the colonel will need t
 | :--- |
 | 10 |
 
-# Note
+## Note
 In the first sample the colonel will need to swap the first and second soldier and then the third and fourth soldier. That will take 2 seconds. The resulting position of the soldiers is `(44, 33, 22, 11)`.
 
 In the second sample the colonel may swap the soldiers in the following sequence:

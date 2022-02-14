@@ -42,7 +42,7 @@ Output the number of damaged dragons.
 | :--- |
 | 17 |
 
-# Note
+## Note
 In the first case every first dragon got punched with a frying pan. Some of the dragons suffered from other reasons as well, but the pan alone would be enough.
 
 In the second case dragons 1, 7, 11, 13, 17, 19 and 23 escaped unharmed.

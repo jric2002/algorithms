@@ -36,7 +36,7 @@ Print the volume fraction in percent of orange juice in Vasya's cocktail. The an
 | :--- |
 | 37.500000000000 |
 
-# Note
+## Note
 Note to the first sample: let's assume that Vasya takes x milliliters of each drink from the fridge. Then the volume of pure juice in the cocktail will equal ![Drinks - Example one](./drinks-example-one.png) milliliters. The total cocktail's volume equals 3·x milliliters, so the volume fraction of the juice in the cocktail equals ![Drinks - Example two](./drinks-example-two.png) , that is, 66.(6) percent.
 
 ## Solution

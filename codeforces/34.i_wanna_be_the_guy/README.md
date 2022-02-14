@@ -38,7 +38,7 @@ If they can pass all the levels, print "`I become the guy.`". If it's impossible
 | :--- |
 | Oh, my keyboard! |
 
-# Note
+## Note
 In the first sample, Little `X` can pass levels `[1 2 3]`, and Little `Y` can pass level `[2 4]`, so they can pass all the levels both.
 
 In the second sample, no one can pass level `4`.
