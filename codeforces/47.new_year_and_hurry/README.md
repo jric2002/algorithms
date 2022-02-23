@@ -52,10 +52,40 @@ In the third sample, Limak needs only `1` minute to get to the party. He has eno
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+#include <cmath>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int n, k;
+  unsigned short int available_minutes;
+  short int problems_can_solve;
+  available_minutes = 240;
+  cin >> n >> k;
+  available_minutes = available_minutes - k;
+  problems_can_solve = (-1 + sqrt((5 + (8 * available_minutes)) / 5)) / 2;
+  if (problems_can_solve < 0) {
+    problems_can_solve = (-1 - sqrt((5 + (8 * available_minutes)) / 5)) / 2;
+  }
+  if (problems_can_solve > n) {
+    problems_can_solve = n;
+  }
+  cout << problems_can_solve << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+import math
+n, k = [int(number) for number in input().split(" ")]
+available_minutes = 240
+available_minutes = available_minutes - k
+problems_can_solve = math.floor((-1 + math.sqrt((5 + (8 * available_minutes)) / 5)) / 2)
+if (problems_can_solve < 0):
+  problems_can_solve = math.floor((-1 - math.sqrt((5 + (8 * available_minutes)) / 5)) / 2)
+if (problems_can_solve > n):
+  problems_can_solve = n
+print(problems_can_solve)
 ```
