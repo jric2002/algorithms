@@ -46,10 +46,46 @@ In the second sample the performances number 2, 4, 9 and 10 are amazing.
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int n;
+  unsigned short int score, max_score, min_score;
+  unsigned short int num_amazing = 0;
+  cin >> n;
+  cin >> score;
+  max_score = min_score = score;
+  for (unsigned short int i = 1; i < n; i++) {
+    cin >> score;
+    if (score > max_score) {
+      max_score = score;
+      num_amazing++;
+    }
+    if (score < min_score) {
+      min_score = score;
+      num_amazing++;
+    }
+  }
+  cout << num_amazing << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n = int(input())
+scores = list(map(int, input().split(" ")))
+max_score = min_score = scores[0]
+num_amazing = 0
+for i in range(1, n):
+  score = scores[i]
+  if (score > max_score):
+    max_score = score
+    num_amazing += 1
+  if (score < min_score):
+    min_score = score
+    num_amazing += 1
+print(num_amazing)
 ```
