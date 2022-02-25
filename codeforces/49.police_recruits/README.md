@@ -65,10 +65,47 @@ The answer is one, as one crime (on step 5) will go untreated.
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  int n;
+  signed short int event;
+  unsigned int num_police = 0, num_crimes = 0;
+  cin >> n;
+  for (unsigned int i = 1; i <= n; i++) {
+    cin >> event;
+    if (event == -1) {
+      if (num_police > 0) {
+        num_police -= 1;
+      }
+      else {
+        num_crimes += 1;
+      }
+    }
+    else {
+      num_police += event;
+    }
+  }
+  cout << num_crimes << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+n = int(input())
+events = list(map(int, input().split(" ")))
+num_police = num_crimes = 0
+for i in range(0, n):
+  event = events[i]
+  if (event == -1):
+    if (num_police > 0):
+      num_police -= 1
+    else:
+      num_crimes += 1
+  else:
+    num_police += event
+print(num_crimes)
 ```
