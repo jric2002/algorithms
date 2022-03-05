@@ -54,10 +54,34 @@ In the third example Polycarp should buy two shovels and pay `2*15 = 30` bur
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int k, r, n, d;
+  cin >> k >> r;
+  n = 1;
+  while (true) {
+    d = ((n * k) % 10);
+    if ((d == r) || (d == 0)) {
+      break;
+    }
+    n++;
+  }
+  cout << n << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+k, r = list(map(int, input().split(" ")))
+n = 1
+while (True):
+  d = ((n * k) % 10)
+  if ((d == r) or (d == 0)):
+    break
+  n += 1
+print(n)
 ```
