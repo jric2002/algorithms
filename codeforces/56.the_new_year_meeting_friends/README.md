@@ -38,10 +38,25 @@ In the first sample, friends should meet at the point `4`. Thus, the first frien
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+#include <algorithm>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int coordinates[3], min_dis = 0;
+  cin >> coordinates[0] >> coordinates[1] >> coordinates[2];
+  sort(coordinates, coordinates + 3);
+  min_dis = (coordinates[1] - coordinates[0]) + (coordinates[2] - coordinates[1]);
+  cout << min_dis << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+coordinates = list(map(int, input().split(" ")))
+coordinates.sort()
+min_dis = (coordinates[1] - coordinates[0]) + (coordinates[2] - coordinates[1])
+print(min_dis)
 ```
