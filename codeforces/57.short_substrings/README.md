@@ -49,10 +49,49 @@ In the third test case, Bob came up with the string `a="bcdaf"`, substrings of l
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+#include <cstring>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int t;
+  string b, sub_b, a;
+  cin >> t;
+  for (unsigned short int i = 0; i < t; i++) {
+    cin >> b;
+    if (b.size() > 2) {
+      sub_b = b.substr(1, b.size() - 2);
+      for (unsigned short int j = 2; j <= sub_b.size(); j += 2) {
+        j = j - 1;
+        sub_b.erase(j, 1);
+      }
+      a = b.at(0) + sub_b + b.at(b.size() - 1);
+    }
+    else {
+      a = b;
+    }
+    cout << a << endl;
+  }
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+t = int(input())
+for i in range(0, t):
+  b = list(input())
+  a = ""
+  if (len(b) > 2):
+    sub_b = b[1:len(b) - 1]
+    j = 2
+    while (j <= len(sub_b)):
+      j = j - 1
+      sub_b.pop(j)
+      j += 2
+    a = b[0] + "".join(sub_b) + b[len(b) - 1]
+  else:
+    a = "".join(b)
+  print(a)
 ```
