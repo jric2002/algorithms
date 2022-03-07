@@ -58,10 +58,58 @@ In the second example, `15 = 6 + 9`. Note that you can't output "`1 14`" because
 ## Solution
 The solution in **C++**:
 ```cpp
-
+#include <iostream>
+#include <cmath>
+/* Author: José Rodolfo (jric2002) */
+template <typename T>
+bool isPrime(T number);
+using namespace std;
+int main() {
+  int n, x, y;
+  cin >> n;
+  x = floor(n / 3);
+  while (true) {
+    y = n - x;
+    if (isPrime(x) || isPrime(y)) {
+      x += 1;
+    }
+    else {
+      break;
+    }
+  }
+  cout << x << " " << y << endl;
+  return 0;
+}
+template <typename T>
+bool isPrime(T number) {
+  for (T i = 2; i <= floor(number / 2); i++) {
+    if ((number % i) == 0) {
+      return false;
+    }
+  }
+  return true;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-
+# Author: José Rodolfo (jric2002)
+import math
+n = int(input())
+def isPrime(number):
+  from_num = 2
+  to_num = math.floor(number / 2) + 1
+  for i in range(from_num, to_num):
+    if ((number % i) == 0):
+      return False
+  return True
+x = math.floor(n / 3)
+y = 0
+while (True):
+  y = n - x
+  if (isPrime(x) or isPrime(y)):
+    x += 1
+  else:
+    break
+print(x, y, sep=" ")
 ```
