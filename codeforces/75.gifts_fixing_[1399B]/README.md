@@ -71,8 +71,69 @@ In the first test case of the example, we can perform the following sequence of 
 ## Solution
 The solution in **C++**:
 ```cpp
+#include <iostream>
+#include <algorithm>
+#include <vector>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int t, n;
+  vector<long int> a;
+  vector<long int> b;
+  long int ai, bi, min_a, min_b;
+  long long int min_mov;
+  cin >> t;
+  while (t--) {
+    cin >> n;
+    min_mov = 0;
+    for (unsigned short int i = 0; i < n; i++) {
+      cin >> ai;
+      a.push_back(ai);
+      if (i > 0) {
+        if (min_a > ai) {
+          min_a = ai;
+        }
+      }
+      else {
+        min_a = ai;
+      }
+    }
+    for (unsigned short int i = 0; i < n; i++) {
+      cin >> bi;
+      b.push_back(bi);
+      if (i > 0) {
+        if (min_b > bi) {
+          min_b = bi;
+        }
+      }
+      else {
+        min_b = bi;
+      }
+    }
+    for (unsigned short int i = 0; i < n; i++) {
+      min_mov += max((a.at(i) - min_a), (b.at(i) - min_b));
+    }
+    cout << min_mov << endl;
+    a.clear();
+    b.clear();
+  }
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
+# Author: José Rodolfo (jric2002)
+t = int(input())
+while (t):
+  n = int(input())
+  min_mov = 0
+  a = list(map(int, input().split(" ")))
+  b = list(map(int, input().split(" ")))
+  min_a = min(a)
+  min_b = min(b)
+  for i in range(0, n):
+    min_mov += max((a[i] - min_a), (b[i] - min_b))
+  print(min_mov)
+  t -= 1
 ```
