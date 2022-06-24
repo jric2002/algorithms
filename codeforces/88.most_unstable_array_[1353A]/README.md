@@ -48,8 +48,42 @@ In the third test case of the example, one of the possible arrays is `[0,2,0,3,0
 ## Solution
 The solution in **C++**:
 ```cpp
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  unsigned short int t;
+  long long int n, m, max_sum;
+  cin >> t;
+  while (t--) {
+    cin >> n >> m;
+    if (n == 1) {
+      max_sum = 0;
+    }
+    else if (n == 2) {
+      max_sum = m;
+    }
+    else {
+      max_sum = m * 2;
+    }
+    cout << max_sum << endl;
+  }
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
+# Author: José Rodolfo (jric2002)
+t = int(input())
+while (t):
+  n, m = map(int, input().split(" "))
+  if (n == 1):
+    max_sum = 0
+  elif (n == 2):
+    max_sum = m
+  else:
+    max_sum = m * 2
+  print(max_sum)
+  t -= 1
 ```
