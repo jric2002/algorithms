@@ -1,91 +1,93 @@
 #include <stdio.h>
 #include <stdlib.h>
 /* Author: José Rodolfo (jric2002) */
-struct Nodo {
-  int valor;
-  struct Nodo *sig;
+struct Node {
+  int value;
+  struct Node *next;
 };
-struct Pila {
-  struct Nodo *cima;
+struct Stack {
+  struct Node *top;
 };
-struct Nodo *obtenerCima(struct Pila *pila) {
-  return pila->cima;
+struct Node *top(struct Stack *s) {
+  return s->top;
 }
-void apilar(struct Pila *pila, int v) {
-  struct Nodo *n = malloc(sizeof(struct Nodo));
-  n->valor = v;
-  n->sig = pila->cima;
-  pila->cima = n;
+void push(struct Stack *s, int v) {
+  struct Node *n = malloc(sizeof(struct Node));
+  n->value = v;
+  n->next = s->top;
+  s->top = n;
 }
-void desapilar(struct Pila *pila) {
-  struct Nodo *aux;
-  aux = pila->cima;
-  pila->cima = aux->sig;
-  free(aux);
+void pop(struct Stack *s) {
+  if (s->top != NULL) {
+    struct Node *aux;
+    aux = s->top;
+    s->top = aux->next;
+    free(aux);
+  }
 };
-void vaciarPila(struct Pila *pila) {
-  struct Nodo *aux;
-  while (pila->cima != NULL) {
-    aux = pila->cima;
-    pila->cima = aux->sig;
+void clear(struct Stack *s) {
+  struct Node *aux;
+  while (s->top != NULL) {
+    aux = s->top;
+    s->top = aux->next;
     free(aux);
   }
 }
-void mostrarPila(struct Pila *pila) {
-  struct Nodo *aux;
-  aux = pila->cima;
+void display(struct Stack *s) {
+  struct Node *aux;
+  aux = s->top;
   if (aux == NULL) {
-    printf("La pila esta vacia");
+    printf("The stack is empty");
   }
   else {
-    printf("Pila: ");
+    printf("Stack: ");
     while (aux != NULL) {
-      printf("%i ", aux->valor);
-      aux = aux->sig;
+      printf("%i ", aux->value);
+      aux = aux->next;
     }
   }
 }
 int main() {
   int op, x;
-  struct Pila *p = malloc(sizeof(struct Pila));
-  p->cima = NULL;
+  struct Stack *s = malloc(sizeof(struct Stack));
+  s->top = NULL;
   do {
-    printf("Implementacion de Pila en C:\n");
-    printf("1. Apilar\n");
-    printf("2. Desapilar\n");
-    printf("3. Vaciar pila\n");
-    printf("4. Mostrar pila\n");
-    printf("5. Salir\n");
-    printf("Ingrese opcion: ");
+    printf("Stack implementation in C:\n");
+    printf("1. Push\n");
+    printf("2. Pop\n");
+    printf("3. Clear\n");
+    printf("4. Display\n");
+    printf("5. Exit\n");
+    printf("Choose an option: ");
     scanf("%i", &op);
     switch (op) {
       case 1:
-        printf("Nuevo valor: ");
+        printf("New value: ");
         scanf("%i", &x);
-        apilar(p, x);
-        printf("Apilando...");
+        push(s, x);
+        printf("Done...");
         break;
       case 2:
-        desapilar(p);
-        printf("Desapilando...");
+        pop(s);
+        printf("Done...");
         break;
       case 3:
-        vaciarPila(p);
-        printf("Vaciando pila...");
+        clear(s);
+        printf("Done...");
         break;
       case 4:
-        mostrarPila(p);
+        display(s);
         break;
       case 5:
-        printf("Saliendo...");
+        printf("Leave...");
         break;
       default:
-        printf("No existe esa opcion...xD");
+        printf("That option does not exist...xD");
         break;
     }
     printf("\n\n");
   } while (op != 5);
-  vaciarPila(p);
-  free(p);
+  clear(s);
+  free(s);
   return 0;
 }

@@ -1,97 +1,99 @@
 #include <stdio.h>
 #include <stdlib.h>
 /* Author: José Rodolfo (jric2002) */
-struct Nodo {
-  int valor;
-  struct Nodo *sig;
+struct Node {
+  int value;
+  struct Node *next;
 };
-struct Cola {
-  struct Nodo *primero;
-  struct Nodo *ultimo;
+struct Queue {
+  struct Node *front;
+  struct Node *back;
 };
-void encolar(struct Cola *cola, int v) {
-  struct Nodo *n = malloc(sizeof(struct Nodo));
-  n->valor = v;
-  if (cola->primero == NULL) {
-    cola->primero = n;
-    cola->ultimo = n;
+void push(struct Queue *q, int v) {
+  struct Node *n = malloc(sizeof(struct Node));
+  n->value = v;
+  if (q->front == NULL) {
+    q->front = n;
+    q->back = n;
   }
   else {
-    cola->ultimo->sig = n;
-    cola->ultimo = n;
+    q->back->next = n;
+    q->back = n;
   }
-  n->sig = NULL;
+  n->next = NULL;
 }
-void desencolar(struct Cola *cola) {
-  struct Nodo *aux;
-  aux = cola->primero;
-  cola->primero = aux->sig;
-  free(aux);
-}
-void vaciarCola(struct Cola *cola) {
-  struct Nodo *aux;
-  while (cola->primero != NULL) {
-    aux = cola->primero;
-    cola->primero = aux->sig;
+void pop(struct Queue *q) {
+  if (q->front != NULL) {
+    struct Node *aux;
+    aux = q->front;
+    q->front = aux->next;
     free(aux);
   }
 }
-void mostrarCola(struct Cola *cola) {
-  struct Nodo *aux;
-  aux = cola->primero;
+void clear(struct Queue *q) {
+  struct Node *aux;
+  while (q->front != NULL) {
+    aux = q->front;
+    q->front = aux->next;
+    free(aux);
+  }
+}
+void display(struct Queue *q) {
+  struct Node *aux;
+  aux = q->front;
   if (aux == NULL) {
-    printf("La cola esta vacia");
+    printf("The queue is the empty");
   }
   else {
-    printf("Cola: ");
+    printf("Queue: ");
     while (aux != NULL) {
-      printf("%i ", aux->valor);
-      aux = aux->sig;
+      printf("%i ", aux->value);
+      aux = aux->next;
     }
   }
 }
 int main() {
   int op, x;
-  struct Cola *c = malloc(sizeof(struct Cola));
-  c->primero = NULL;
-  c->ultimo = NULL;
+  struct Queue *q = malloc(sizeof(struct Queue));
+  q->front = NULL;
+  q->back = NULL;
   do {
-    printf("Implementacion de Cola en C:\n");
-    printf("1. Encolar\n");
-    printf("2. Desencolar\n");
-    printf("3. Vaciar cola\n");
-    printf("4. Mostrar cola\n");
-    printf("5. Salir\n");
-    printf("Ingrese opcion: ");
+    printf("Queue implementation in C:\n");
+    printf("1. Push\n");
+    printf("2. Pop\n");
+    printf("3. Clear\n");
+    printf("4. Display\n");
+    printf("5. Exit\n");
+    printf("Choose an option: ");
     scanf("%i", &op);
     switch (op) {
       case 1:
-        printf("Nuevo valor: ");
+        printf("New value: ");
         scanf("%i", &x);
-        encolar(c, x);
-        printf("Encolando...");
+        push(q, x);
+        printf("Done!");
         break;
       case 2:
-        desencolar(c);
-        printf("Desencolando...");
+        pop(q);
+        printf("Done!");
         break;
       case 3:
-        vaciarCola(c);
-        printf("Vaciando cola...");
+        clear(q);
+        printf("Done!");
         break;
       case 4:
-        mostrarCola(c);
+        display(q);
         break;
       case 5:
-        printf("Saliendo...");
+        printf("Leave...");
         break;
       default:
-        printf("No existe esa opcion...xD");
+        printf("That option does not exist...xD");
         break;
     }
     printf("\n\n");
   } while (op != 5);
-  vaciarCola(c);
-  free(c);
+  clear(q);
+  free(q);
   return 0;
 }
