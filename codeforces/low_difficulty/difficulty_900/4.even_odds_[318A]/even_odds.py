@@ -1,0 +1,5 @@
+# Author: José Rodolfo (jric2002)
+n, k = map(int, input().split(" "))
+temp = int(n / 2) if ((n % 2) == 0) else int((n + 1) / 2)
+number = ((2 * k) - 1) if (k <= temp) else (2 * (k - temp))
+print(number)

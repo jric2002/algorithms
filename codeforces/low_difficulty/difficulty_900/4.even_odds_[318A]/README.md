@@ -39,16 +39,59 @@ In the first sample Volodya's sequence will look like this: `{1, 3, 5, 7, 9, 2, 
 ## Solution
 The solution in **C**:
 ```c
+#include <stdio.h>
+/* Author: José Rodolfo (jric2002) */
+int main() {
+  long long int n, k, temp, number;
+  scanf("%lli %lli", &n, &k);
+  temp = ((n % 2) == 0) ? (n / 2) : ((n + 1) / 2);
+  number = (k <= temp) ? ((2 * k) - 1) : (2 * (k - temp));
+  printf("%lld\n", number);
+  return 0;
+}
 ```
 
 The solution in **C++**:
 ```cpp
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  long long int n, k, temp, number;
+  cin >> n >> k;
+  temp = ((n % 2) == 0) ? (n / 2) : ((n + 1) / 2);
+  number = (k <= temp) ? ((2 * k) - 1) : (2 * (k - temp));
+  cout << number << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
+# Author: José Rodolfo (jric2002)
+n, k = map(int, input().split(" "))
+temp = int(n / 2) if ((n % 2) == 0) else int((n + 1) / 2)
+number = ((2 * k) - 1) if (k <= temp) else (2 * (k - temp))
+print(number)
 ```
 
 The solution in **Java**:
 ```java
+/* Author: José Rodolfo (jric2002) */
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+public class EvenOdds {
+  public static void main(String[] args) throws IOException {
+    Double n, k, temp, number;
+    String[] values;
+    BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+    values = (input.readLine().split(" "));
+    n = Double.valueOf(values[0]);
+    k = Double.valueOf(values[1]);
+    temp = ((n % 2) == 0) ? (n / 2) : ((n + 1) / 2);
+    number = (k <= temp) ? ((2 * k) - 1) : (2 * (k - temp));
+    System.out.print(String.format("%.0f", number));
+  }
+}
 ```
