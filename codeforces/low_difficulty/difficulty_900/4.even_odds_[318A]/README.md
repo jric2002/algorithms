@@ -1,7 +1,7 @@
 # Even Odds
 **Problem code**: 318A  
 **Tags**: math  
-**Time limit per test**: 1 seconds  
+**Time limit per test**: 1 second  
 **Memory limit per test**: 256 megabytes  
 **Input**: standard input  
 **Output**: standard output  
