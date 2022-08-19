@@ -43,6 +43,7 @@ Print the result of the given word's processing.
 | Lock |
 
 ## Solution
+The solution in **C**:
 ```c
 #include <stdio.h>
 #include <string.h>

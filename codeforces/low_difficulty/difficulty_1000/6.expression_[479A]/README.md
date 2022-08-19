@@ -46,6 +46,7 @@ Print the maximum value of the expression that you can obtain.
 | 60 |
 
 ## Solution
+The solution in **C**:
 ```c
 #include <stdio.h>
 /* Author: José Rodolfo (jric2002) */

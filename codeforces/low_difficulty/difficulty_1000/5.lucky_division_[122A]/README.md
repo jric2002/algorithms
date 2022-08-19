@@ -47,6 +47,7 @@ Note that all lucky numbers are almost lucky as any number is evenly divisible b
 In the first sample 47 is a lucky number. In the second sample 16 is divisible by 4.
 
 ## Solution
+The solution in **C**:
 ```c
 #include <stdio.h>
 #include <stdbool.h>

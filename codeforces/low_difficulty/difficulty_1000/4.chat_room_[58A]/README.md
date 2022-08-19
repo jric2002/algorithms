@@ -32,6 +32,7 @@ If Vasya managed to say hello, print "`YES`", otherwise print "`NO`".
 | NO |
 
 ## Solution
+The solution in **C**:
 ```c
 #include <stdio.h>
 #include <string.h>
