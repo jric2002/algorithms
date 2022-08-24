@@ -41,18 +41,43 @@ Please, do not use the `%lld` specifier to read or write 64-bit integers in С++
 In the first test example the sequence of Xenia's moves along the ringroad looks as follows: `1 → 2 → 3 → 4 → 1 → 2 → 3`. This is optimal sequence. So, she needs 6 time units.
 
 ## Solution
-The solution in **C**:
-```c
-```
-
 The solution in **C++**:
 ```cpp
+#include <iostream>
+/* Author: José Rodolfo (jric2002) */
+using namespace std;
+int main() {
+  int n, m, ap, ac;
+  long long movs;
+  cin >> n >> m;
+  cin >> ap;
+  movs = ap - 1;
+  m--;
+  while(m--) {
+    cin >> ac;
+    if (ap <= ac) {
+      movs += (ac - ap);
+    }
+    else {
+      movs += ((n + ac) - ap);
+    }
+    ap = ac;
+  }
+  cout << movs << endl;
+  return 0;
+}
 ```
 
 The solution in **Python 3**:
 ```python
-```
-
-The solution in **Java**:
-```java
+# Author: José Rodolfo (jric2002)
+n, m = map(int, input().split(" "))
+a = [int(x) for x in input().split(" ")]
+movs = a[0] - 1
+for i in range(1, m):
+  if (a[i - 1] <= a[i]):
+    movs += (a[i] - a[i - 1])
+  else:
+    movs += ((n + a[i]) - a[i - 1])
+print(movs)
 ```
