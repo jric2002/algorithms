@@ -6,26 +6,22 @@ struct Node {
   struct Node *right;
 };
 struct BST {
-  struct Node *raiz;
+  struct Node *root;
 };
-void insertar(struct BST *bst, struct Node *aux, int v) {
-  if (aux == NULL) {
-    struct Node *n = malloc(sizeof(struct Node));
-    n->value = v;
-    n->left = NULL;
-    n->right = NULL;
-    bst->raiz = n;
+void insert(struct Node **r, int v) {
+  if ((*r) == NULL) {
+    (*r) = malloc(sizeof(struct Node));
+    (*r)->value = v;
+    (*r)->left = NULL;
+    (*r)->right = NULL;
   }
   else {
-    if (v < aux->value) {
-      insertar(bst, aux->left, v);
-      aux->left = bst->raiz;
+    if (v < (*r)->value) {
+      insert(&((*r)->left), v);
     }
     else {
-      insertar(bst, aux->right, v);
-      aux->right = bst->raiz;
+      insert(&((*r)->right), v);
     }
-    bst->raiz = aux;
   }
 }
 void preorder(struct Node *aux) {
@@ -62,7 +58,7 @@ void display(struct Node *aux, int c) {
 int main() {
   int op, x;
   struct BST *bst = malloc(sizeof(struct BST));
-  bst->raiz = NULL;
+  bst->root = NULL;
   do {
     printf("BST implementation in C:\n");
     printf("1. Insert\n");
@@ -77,24 +73,24 @@ int main() {
       case 1:
         printf("New value: ");
         scanf("%i", &x);
-        insertar(bst, bst->raiz, x);
+        insert(&(bst->root), x);
         printf("Done...");
         break;
       case 2:
         printf("Preorder: ");
-        preorder(bst->raiz);
+        preorder(bst->root);
         break;
       case 3:
         printf("Inorder: ");
-        inorder(bst->raiz);
+        inorder(bst->root);
         break;
       case 4:
         printf("Postorder: ");
-        postorder(bst->raiz);
+        postorder(bst->root);
         break;
       case 5:
         printf("\n");
-        display(bst->raiz, 0);
+        display(bst->root, 0);
         break;
       case 6:
         printf("Leave...");
