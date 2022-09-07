@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 struct Node {
   int value;
   struct Node *left;
@@ -59,48 +60,47 @@ int main() {
   int op, x;
   struct BST *bst = malloc(sizeof(struct BST));
   bst->root = NULL;
-  do {
+  while (true) {
     printf("BST implementation in C:\n");
     printf("1. Insert\n");
     printf("2. Preorder\n");
     printf("3. Inorder\n");
     printf("4. Postorder\n");
     printf("5. Display\n");
-    printf("6. Exit\n");
+    printf("0. Exit\n");
     printf("Choose an option: ");
     scanf("%i", &op);
-    switch (op) {
-      case 1:
-        printf("New value: ");
-        scanf("%i", &x);
-        insert(&(bst->root), x);
-        printf("Done...");
-        break;
-      case 2:
-        printf("Preorder: ");
-        preorder(bst->root);
-        break;
-      case 3:
-        printf("Inorder: ");
-        inorder(bst->root);
-        break;
-      case 4:
-        printf("Postorder: ");
-        postorder(bst->root);
-        break;
-      case 5:
-        printf("\n");
-        display(bst->root, 0);
-        break;
-      case 6:
-        printf("Leave...");
-        break;
-      default:
-        printf("That option does not exist...xD");
-        break;
+    if (op == 1) {
+      printf("New value: ");
+      scanf("%i", &x);
+      insert(&(bst->root), x);
+      printf("Done...");
+    }
+    else if (op == 2) {
+      printf("Preorder: ");
+      preorder(bst->root);
+    }
+    else if (op == 3) {
+      printf("Inorder: ");
+      inorder(bst->root);
+    }
+    else if (op == 4) {
+      printf("Postorder: ");
+      postorder(bst->root);
+    }
+    else if (op == 5) {
+      printf("\n");
+      display(bst->root, 0);
+    }
+    else if (op == 0) {
+      printf("Leave...");
+      break;
+    }
+    else {
+      printf("That option does not exist...xD");
     }
     printf("\n\n");
-  } while (op != 6);
+  }
   free(bst);
   return 0;
 }
