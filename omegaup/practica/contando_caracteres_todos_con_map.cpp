@@ -1,9 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <map>
-/* Author: José Rodolfo (jric2002) */
 using namespace std;
-/* Declaration */
 int main() {
   string t;
   map<char, int> m;
@@ -16,4 +14,3 @@ int main() {
   }
   return 0;
 }
-/* Definition */

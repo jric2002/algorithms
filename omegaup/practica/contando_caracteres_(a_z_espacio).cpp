@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cstring>
-/* Author: José Rodolfo (jric2002) */
 using namespace std;
-/* Declaration */
 int main() {
   int cantidad_caracteres[27] = {0};
   char c;
@@ -32,4 +30,3 @@ int main() {
   }
   return 0;
 }
-/* Definition */
