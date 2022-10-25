@@ -3,6 +3,7 @@
 using namespace std;
 /* Declaration */
 int main() {
+  
   return 0;
 }
 /* Definition */
