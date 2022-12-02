@@ -9,6 +9,10 @@ Hola, en este repositorio vas a encontrar ejercicios de algoritmia.
 | :--- | :--- |
 | Codeforces | https://codeforces.com/ |
 | Advent of code | https://adventofcode.com/ |
+| Meta Hacker Cup | https://web.facebook.com/codingcompetitions/hacker-cup/ |
+| omegaUp | https://omegaup.com/ |
+| Virtual Judge | https://vjudge.net/ |
+| Red de Programación Competitiva - RPC | https://redprogramacioncompetitiva.com/ |
 
 **Codeforces**: En la carpeta **codeforces** se encuentran varios ejercicios con su respectiva solución, puedes visitar el siguiente link para ver los ejercicios <https://codeforces.com/problemset>
 
